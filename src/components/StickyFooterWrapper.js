@@ -3,8 +3,11 @@ import { Box } from "@mui/material";
 
 const classes = {
 	footerSelector: {
+		position: "relative",
 		"& > footer": {
-			marginTop: "auto",
+			position: "absolute",
+			bottom: 0,
+			width: "100%",
 		},
 		// border: "1px solid red",
 	},

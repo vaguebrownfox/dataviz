@@ -11,6 +11,7 @@ import createEmotionCache from "../src/utils/createEmotionCache";
 
 // Components
 import Head from "next/head";
+import { PROJECT_NAME } from "../src/utils/config";
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -29,6 +30,7 @@ export default function MyApp(props) {
 					name="viewport"
 					content="initial-scale=1, width=device-width"
 				/>
+				<title>{PROJECT_NAME}</title>
 			</Head>
 			<ThemeProvider theme={theme}>
 				{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

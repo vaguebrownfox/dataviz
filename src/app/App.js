@@ -1,35 +1,22 @@
-import { Box } from "@mui/material";
 import * as React from "react";
-import Dropzone from "../components/Dropzone";
+import { Box } from "@mui/material";
+import Voronoi from "../components/viz/Voronoi";
 
-const classes = {
-	img: {
-		width: "auto",
-	},
-};
+import classes from "../styles/App.module.css";
+import { Button } from "../components/Button";
+import Link from "../components/Link";
 
-const App = React.memo(function App({ src, children, title }) {
-	const onDrop = React.useCallback(async (files) => {
-		try {
-			const file = files[0];
-			if (!file) return;
-
-			const timestamp = new Date();
-			const src = URL.createObjectURL(file);
-
-			console.log("file", file);
-		} catch (err) {
-			log(err);
-		}
-	}, []);
-
+const App = React.memo(function App() {
 	return (
-		<div>
-			<h1>App</h1>
-			<Box mb={2}>
-				<Dropzone dropzoneOptions={{ onDrop }} />
+		<>
+			<Box className={classes.box} display="flex" minHeight={"80vh"}>
+				<Link href="/slides/1" style={{ textDecoration: "none" }}>
+					<Button>Start</Button>
+				</Link>
 			</Box>
-		</div>
+
+			<Voronoi />
+		</>
 	);
 });
 
