@@ -1,10 +1,11 @@
 import React from "react";
 import Slide from "../../src/components/Slide";
 import { getAllSlideIds, getSlideData } from "../../src/libx/slides";
+import classes from "../../src/styles/Slides.module.css";
 
 const Slides = ({ slideData }) => {
 	return (
-		<div>
+		<div className={classes.root}>
 			<Slide {...{ slideData }} />
 		</div>
 	);
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
 	const paths = getAllSlideIds();
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 }
 
