@@ -4,6 +4,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { IconButton } from "@mui/material";
 import theme from "../styles/theme";
+import Link from "./Link";
 
 const classes = {
 	changeArrows: {
@@ -20,7 +21,7 @@ const classes = {
 	},
 };
 
-export const ChangeArrows = ({ sid }) => {
+export const ChangeArrows = ({ progs }) => {
 	return (
 		<div style={classes.changeArrows}>
 			<IconButton
@@ -33,16 +34,18 @@ export const ChangeArrows = ({ sid }) => {
 			>
 				<ArrowBackIosNewIcon />
 			</IconButton>
-			<IconButton
-				sx={{
-					margin: theme.spacing(2),
-					color: theme.palette.primary.main,
-				}}
-				aria-label="next"
-				size="large"
-			>
-				<ArrowForwardIosIcon />
-			</IconButton>
+			<Link>
+				<IconButton
+					sx={{
+						margin: theme.spacing(2),
+						color: theme.palette.primary.main,
+					}}
+					aria-label="next"
+					size="large"
+				>
+					<ArrowForwardIosIcon />
+				</IconButton>
+			</Link>
 		</div>
 	);
 };
