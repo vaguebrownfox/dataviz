@@ -11,8 +11,7 @@ const classes = {
 		position: "absolute",
 		left: 0,
 		right: 0,
-		top: 0,
-		bottom: 0,
+		bottom: 32,
 		display: "flex",
 		flexGrow: 1,
 		justifyContent: "space-between",
@@ -24,17 +23,25 @@ const classes = {
 export const ChangeArrows = ({ progs }) => {
 	return (
 		<div style={classes.changeArrows}>
-			<IconButton
-				sx={{
-					margin: theme.spacing(2),
-					color: theme.palette.primary.main,
-				}}
-				aria-label="previous"
-				size="large"
+			<Link
+				href={`/slides/${progs.prev}`}
+				style={{ textDecoration: "none" }}
 			>
-				<ArrowBackIosNewIcon />
-			</IconButton>
-			<Link>
+				<IconButton
+					sx={{
+						margin: theme.spacing(2),
+						color: theme.palette.primary.main,
+					}}
+					aria-label="previous"
+					size="large"
+				>
+					<ArrowBackIosNewIcon />
+				</IconButton>
+			</Link>
+			<Link
+				href={`/slides/${progs.next}`}
+				style={{ textDecoration: "none" }}
+			>
 				<IconButton
 					sx={{
 						margin: theme.spacing(2),

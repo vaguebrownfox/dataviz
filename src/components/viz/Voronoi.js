@@ -9,8 +9,6 @@ import { blue } from "@mui/material/colors";
 import theme from "../../styles/theme";
 
 const Voronoi = () => {
-	const [poles, setPoles] = React.useState([]);
-
 	const [size, setSize] = React.useState({ height: 0, width: 0 });
 
 	const [contRef] = useSize(setSize);

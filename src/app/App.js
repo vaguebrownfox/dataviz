@@ -1,10 +1,9 @@
 import * as React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import Voronoi from "../components/viz/Voronoi";
 
 import classes from "../styles/App.module.css";
 import { Button } from "../components/Button";
-import Link from "../components/Link";
 
 const App = React.memo(function App() {
 	return (
@@ -17,16 +16,33 @@ const App = React.memo(function App() {
 				alignItems={"center"}
 				minHeight={"80vh"}
 			>
-				<Typography
-					sx={{ paddingBottom: 16 }}
-					variant="h6"
-					gutterBottom
-				>
-					Jeevan K | Lab Talk | 14th Jan'22
-				</Typography>
 				<Link href="/slides/1" style={{ textDecoration: "none" }}>
-					<Button>Start</Button>
+					<div className={classes.title}>
+						<Typography
+							className={classes.txt}
+							variant="h5"
+							component="div"
+						>
+							Jeevan K
+						</Typography>
+						<Typography
+							className={classes.txt}
+							variant="h5"
+							component="div"
+						>
+							| Lab Talk |
+						</Typography>
+						<Typography
+							className={classes.txt}
+							variant="h5"
+							component="div"
+						>
+							14th Jan'22
+						</Typography>
+					</div>
 				</Link>
+
+				{/* <Button>Start</Button> */}
 			</Box>
 
 			<Voronoi />

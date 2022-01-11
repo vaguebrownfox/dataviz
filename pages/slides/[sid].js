@@ -1,12 +1,12 @@
 import React from "react";
 import Slide from "../../src/components/Slide";
-import { getAllSlideIds, getSlideData } from "../../src/libx/slides";
+import { getAllSlideIds } from "../../src/libx/slides";
 import classes from "../../src/styles/Slides.module.css";
 
-const Slides = ({ slideData }) => {
+const Slides = ({ sid }) => {
 	return (
 		<div className={classes.root}>
-			<Slide {...{ slideData }} />
+			<Slide {...{ sid }} />
 		</div>
 	);
 };
@@ -24,10 +24,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 	// Fetch necessary data for the blog post using params.id
-	const slideData = getSlideData(params.sid);
 	return {
 		props: {
-			slideData,
+			sid: params.sid,
 		},
 	};
 }
