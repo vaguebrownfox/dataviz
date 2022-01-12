@@ -9,9 +9,10 @@ const useSvg = (draw, options = {}) => {
 		let frameCount = 0;
 		let animationFrameId;
 
-		const render = () => {
+		const render = async () => {
 			frameCount++;
-			draw(context, frameCount);
+			await draw(svgRef);
+
 			animationFrameId = window.requestAnimationFrame(render);
 		};
 		render();

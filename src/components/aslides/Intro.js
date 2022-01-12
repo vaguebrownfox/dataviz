@@ -1,12 +1,12 @@
 import React from "react";
+import Signal from "../viz/Signal";
 
 const Intro = () => {
-  return (
-    <div>
-      <h1>Intro</h1>
-      <p>mha naem jeff</p>
-    </div>
-  );
+	return (
+		<div>
+			<Signal />
+		</div>
+	);
 };
 
 export default Intro;
