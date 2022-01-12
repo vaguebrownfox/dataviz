@@ -25,19 +25,23 @@ export const slides = {
 	1: {
 		sid: "1",
 		title: "Intro",
-		progs: { prev: 1, curr: 1, next: 2 },
+		progs: { prev: `/`, curr: `/slides/${1}`, next: `/slides/${2}` },
 		component: <Intro />,
 	},
 	2: {
 		sid: "2",
 		title: "Motivation",
-		progs: { prev: 1, curr: 2, next: 3 },
+		progs: {
+			prev: `/slides/${1}`,
+			curr: `/slides/${2}`,
+			next: `/slides/${3}`,
+		},
 		component: <Motivation />,
 	},
 	3: {
 		sid: "3",
 		title: "Motivation",
-		progs: { prev: 1, curr: 2, next: 3 },
+		progs: { prev: `/slides/${2}`, curr: `/slides/${3}`, next: `/` },
 		component: <Motivation />,
 	},
 };

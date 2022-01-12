@@ -23,10 +23,7 @@ const classes = {
 export const ChangeArrows = ({ progs }) => {
 	return (
 		<div style={classes.changeArrows}>
-			<Link
-				href={`/slides/${progs.prev}`}
-				style={{ textDecoration: "none" }}
-			>
+			<Link href={progs.prev} style={{ textDecoration: "none" }}>
 				<IconButton
 					sx={{
 						margin: theme.spacing(2),
@@ -38,10 +35,7 @@ export const ChangeArrows = ({ progs }) => {
 					<ArrowBackIosNewIcon />
 				</IconButton>
 			</Link>
-			<Link
-				href={`/slides/${progs.next}`}
-				style={{ textDecoration: "none" }}
-			>
+			<Link href={progs.next} style={{ textDecoration: "none" }}>
 				<IconButton
 					sx={{
 						margin: theme.spacing(2),

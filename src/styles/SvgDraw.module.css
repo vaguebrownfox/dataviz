@@ -8,6 +8,27 @@
 	z-index: -1;
 }
 
+.svgDrawStatic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	z-index: -1;
+}
+
+.svgBox {
+	height: 70vh;
+	width: 70%;
+	min-height: 300px;
+	padding: 8px;
+}
+
 .svg {
 	height: 100%;
 	width: 100%;

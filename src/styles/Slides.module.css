@@ -17,3 +17,12 @@
 
 	margin-top: auto;
 }
+
+.blank {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: stretch;
+	flex-grow: 1;
+	min-height: 100vh;
+}
