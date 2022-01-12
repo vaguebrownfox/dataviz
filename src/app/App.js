@@ -3,7 +3,6 @@ import { Box, Link, Typography } from "@mui/material";
 import Voronoi from "../components/viz/Voronoi";
 
 import classes from "../styles/App.module.css";
-import { Button } from "../components/Button";
 
 const App = React.memo(function App() {
 	return (
