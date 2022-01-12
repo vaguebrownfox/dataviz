@@ -9,10 +9,6 @@ import { blue } from "@mui/material/colors";
 import theme from "../../styles/theme";
 
 const Voronoi = () => {
-	const [size, setSize] = React.useState({ height: 0, width: 0 });
-
-	const [contRef] = useSize(setSize);
-
 	function* circle(cx, cy, r, n, da) {
 		for (let i = 0; i < n; ++i) {
 			const a = (i * 2 * Math.PI) / n + da;
@@ -101,7 +97,7 @@ const Voronoi = () => {
 	React.useEffect(() => {}, []);
 
 	return (
-		<div ref={contRef} className={classes.cnvDraw}>
+		<div className={classes.cnvDraw} style={{ opacity: 0.7 }}>
 			<Canvas
 				className={classes.cnv}
 				draw={drawVornoi.bind({ circles, resample })}

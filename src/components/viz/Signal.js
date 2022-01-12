@@ -77,7 +77,7 @@ const Signal = () => {
 			.data(randomize)
 			.transition()
 			.delay(0)
-			.duration(8000)
+			.duration(12000)
 			.attr("d", area)
 			.attr("fill", () => zColor(Math.random()))
 			.end();
@@ -87,7 +87,7 @@ const Signal = () => {
 		<div className={classes.svgDraw}>
 			<Svg
 				className={classes.svg}
-				style={{ opacity: 0.3 }}
+				style={{ opacity: 0.4 }}
 				draw={drawSig}
 			/>
 		</div>
