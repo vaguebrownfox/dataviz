@@ -24,24 +24,25 @@ export default Slide;
 export const slides = {
 	1: {
 		sid: "1",
-		title: "Intro",
 		progs: { prev: `/`, curr: `/slides/${1}`, next: `/slides/${2}` },
-		component: <Intro />,
+		title: "Motivation",
+		component: <Motivation />,
 	},
 	2: {
 		sid: "2",
-		title: "Motivation",
 		progs: {
 			prev: `/slides/${1}`,
 			curr: `/slides/${2}`,
 			next: `/slides/${3}`,
 		},
-		component: <Motivation />,
+		title: "Intro",
+		component: <Intro />,
 	},
 	3: {
 		sid: "3",
-		title: "Motivation",
 		progs: { prev: `/slides/${2}`, curr: `/slides/${3}`, next: `/` },
+
+		title: "Motivation",
 		component: <Motivation />,
 	},
 };
