@@ -1,7 +1,7 @@
 import { GitHub as GitHubIcon } from "@mui/icons-material";
-import { AppBar, Box, Toolbar } from "@mui/material";
+import { AppBar, Box, Link, Toolbar } from "@mui/material";
 import * as React from "react";
-import { PROJECT_NAME } from "../utils/config";
+import { PROJECT_LINK, PROJECT_NAME } from "../utils/config";
 import theme from "../styles/theme";
 
 const classes = {
@@ -28,7 +28,13 @@ const Header = React.memo(function Header() {
 					{PROJECT_NAME}
 				</Box>
 				<Box>
-					<GitHubIcon />
+					<Link
+						href={PROJECT_LINK}
+						target="_blank"
+						style={{ textDecoration: "none" }}
+					>
+						<GitHubIcon />
+					</Link>
 				</Box>
 			</Toolbar>
 		</AppBar>
