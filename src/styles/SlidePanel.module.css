@@ -1,3 +1,15 @@
 .root {
 	margin-top: 2rem;
 }
+
+/* svg data */
+
+.dot {
+	color: black;
+}
+
+.axis line,
+.axis path {
+	stroke: #bbb;
+	stroke-width: 1px;
+}
