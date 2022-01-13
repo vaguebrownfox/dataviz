@@ -15,15 +15,22 @@ const Motivation = () => {
 		setSlideCount((p) => (p - 1 < 0 ? 0 : p - 1));
 	};
 
+	const aText = (svg, txt, size = 32, xp, yp) => {
+		return svg
+			.append("text")
+			.attr("text-anchor", "middle")
+			.attr("font-size", size)
+			.attr("x", `${xp}%`)
+			.attr("y", `${yp}%`)
+			.text(`${txt}`);
+	};
+
 	async function drawMotivation(svgRef) {
 		const svg = d3.select(svgRef.current);
 		svg.selectAll("*").remove();
 
-		svg.append("text")
-			.attr("text-anchor", "middle")
-			.attr("x", "50%")
-			.attr("y", "50%")
-			.text("motivation" + this.slideCount);
+		aText(svg, "It's painful", 32, 50, 10);
+		aText(svg, "Get good", 24, 50, 50);
 	}
 
 	return (
