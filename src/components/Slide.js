@@ -6,6 +6,7 @@ import Head from "next/head";
 import Motivation from "./aslides/Motivation";
 import Intro from "./aslides/Intro";
 import Preface from "./aslides/Preface";
+import InvarComp from "./aslides/InvarComp";
 
 const Slide = ({ id }) => {
 	return (
@@ -64,7 +65,7 @@ export const p = (id) => {
 			return {
 				progs,
 				title: "Invariant and Component",
-				component: <Preface />,
+				component: <InvarComp />,
 			};
 		case "7":
 			return {
