@@ -1,11 +1,14 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
-const useSvgStatic = (draw) => {
+const useSvgStatic = (draw, width, height) => {
 	const svgRef = useRef(null);
 
 	useEffect(() => {
-		await draw(svgRef);
-	}, [draw]);
+		const render = async () => {
+			await draw(svgRef);
+		};
+		render();
+	}, [draw, width, height]);
 
 	return svgRef;
 };
