@@ -3,30 +3,31 @@ import Slide from "../../src/components/Slide";
 import { getAllSlideIds } from "../../src/libx/slides";
 import classes from "../../src/styles/Slides.module.css";
 
-const Slides = ({ sid }) => {
+const Slides = ({ sid, id }) => {
 	return (
 		<div className={classes.root}>
-			<Slide {...{ sid }} />
+			<Slide id={sid} />
 		</div>
 	);
 };
 
 export default Slides;
 
-export async function getStaticPaths() {
+export function getStaticPaths() {
 	// Return a list of possible value for id
 	const paths = getAllSlideIds();
 	return {
 		paths,
-		fallback: true,
+		fallback: false,
 	};
 }
 
-export async function getStaticProps({ params }) {
+export function getStaticProps({ params }) {
 	// Fetch necessary data for the blog post using params.id
 	return {
 		props: {
 			sid: params.sid,
+			id: 1,
 		},
 	};
 }
