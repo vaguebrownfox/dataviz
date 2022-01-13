@@ -27,15 +27,15 @@ const Header = React.memo(function Header() {
 				<Box fontSize="h6.fontSize" flexGrow={1}>
 					{PROJECT_NAME}
 				</Box>
-				<Box>
-					<Link
-						href={PROJECT_LINK}
-						target="_blank"
-						style={{ textDecoration: "none" }}
-					>
-						<GitHubIcon />
-					</Link>
-				</Box>
+				<Link
+					href={PROJECT_LINK}
+					target="_blank"
+					style={{ textDecoration: "none", color: "white" }}
+				>
+					<Box>
+						<GitHubIcon sx={{ color: "white" }} />
+					</Box>
+				</Link>
 			</Toolbar>
 		</AppBar>
 	);
