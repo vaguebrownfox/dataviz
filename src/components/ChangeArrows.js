@@ -5,24 +5,11 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { IconButton } from "@mui/material";
 import theme from "../styles/theme";
 import Link from "./Link";
-
-const classes = {
-	changeArrows: {
-		position: "absolute",
-		left: 0,
-		right: 0,
-		bottom: 32,
-		display: "flex",
-		flexGrow: 1,
-		justifyContent: "space-between",
-		alignItems: "center",
-		color: "black",
-	},
-};
+import classes from "../styles/Slides.module.css";
 
 export const ChangeArrows = ({ progs }) => {
 	return (
-		<div style={classes.changeArrows}>
+		<div className={classes.changeArrows}>
 			<Link href={progs.prev} style={{ textDecoration: "none" }}>
 				<IconButton
 					sx={{
