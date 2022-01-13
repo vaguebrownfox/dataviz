@@ -22,9 +22,9 @@
 }
 
 .svgBox {
-	height: 70vh;
-	width: 70%;
-	min-height: 300px;
+	height: 80vh;
+	width: 90%;
+	min-height: 256px;
 	padding: 8px;
 }
 
