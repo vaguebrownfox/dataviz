@@ -22,35 +22,69 @@ const Slide = ({ id }) => {
 export default Slide;
 
 export const p = (id) => {
+	const progs = {
+		prev: `/slides/${parseInt(id) - 1}`,
+		curr: `/slides/${parseInt(id)}`,
+		next: `/slides/${parseInt(id) + 1}`,
+	};
+
 	switch (`${id}`) {
 		case "1":
 			return {
-				progs: {
-					prev: `/`,
-					curr: `/slides/${1}`,
-					next: `/slides/${2}`,
-				},
+				progs: { ...progs, prev: `/slides/${id}` },
 				title: "Motivation",
 				component: <Motivation />,
 			};
 		case "2":
 			return {
-				progs: {
-					prev: `/slides/${1}`,
-					curr: `/slides/${2}`,
-					next: `/slides/${3}`,
-				},
+				progs,
 				title: "Intro",
 				component: <Intro />,
 			};
 		case "3":
 			return {
-				progs: {
-					prev: `/slides/${2}`,
-					curr: `/slides/${3}`,
-					next: `/`,
-				},
+				progs,
 				title: "Preface",
+				component: <Preface />,
+			};
+		case "4":
+			return {
+				progs,
+				title: "General Theory",
+				component: <Preface />,
+			};
+		case "5":
+			return {
+				progs,
+				title: "Analysis of the Information",
+				component: <Preface />,
+			};
+
+		case "6":
+			return {
+				progs,
+				title: "Invariant and Component",
+				component: <Preface />,
+			};
+		case "7":
+			return {
+				progs,
+				title: "Number of Components",
+				component: <Preface />,
+			};
+		case "8":
+			return {
+				progs,
+				title: "Length of Components",
+				component: <Preface />,
+			};
+		case "9":
+			return {
+				progs: {
+					...progs,
+					next: `/slides/${id}`,
+				},
+				title: "Level of Organization",
 				component: <Preface />,
 			};
 		default:
