@@ -4,8 +4,6 @@ import * as d3 from "d3";
 
 // Styles
 import classes from "../../styles/CanvasDraw.module.css";
-import useSize from "../../hooks/useSize";
-import { blue } from "@mui/material/colors";
 import theme from "../../styles/theme";
 
 const Voronoi = () => {

@@ -62,7 +62,7 @@ const Signal = () => {
 		// x y z
 		const xScale = d3.scaleLinear([0, mSamples - 1], [0, width]);
 		const yScale = d3.scaleLinear([0, 1], [height, 0]);
-		const zColor = d3.interpolateCividis;
+		const zColor = d3.interpolateGreys;
 
 		// Area
 		const area = d3
@@ -76,8 +76,8 @@ const Signal = () => {
 		await path
 			.data(randomize)
 			.transition()
-			.delay(0)
-			.duration(12000)
+			.delay((_, i) => (nLayers - i) * 0)
+			.duration((_, i) => (nLayers - i + 1) * 1000)
 			.attr("d", area)
 			.attr("fill", () => zColor(Math.random()))
 			.end();
