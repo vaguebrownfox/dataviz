@@ -15,7 +15,7 @@ export const SvgStatic = (props) => {
 
 		setWidth(width);
 		setHeight(height);
-	}, [refresh]);
+	}, [refresh, svgRef]);
 
 	return <svg ref={svgRef} {...otherProps} style={{ ...style }} />;
 };
