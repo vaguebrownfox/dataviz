@@ -1,29 +1,52 @@
-import React from "react";
-import { Svg } from "../Svg";
+import React, { useState } from "react";
 import * as d3 from "d3";
 
 // Styles
 import classes from "../../styles/SvgDraw.module.css";
-import { Paper } from "@mui/material";
+import { IconButton, Paper } from "@mui/material";
+import { SvgStatic } from "../SvgStatic";
+import { Svg } from "../Svg";
+import { Refresh } from "@mui/icons-material";
 
-const Basic = () => {
-	function drawBasic(svgRef) {
-		const svg = d3.select(svgRef.current);
-		svg.append("rect")
-			.attr("x", 0)
-			.attr("y", 0)
-			.attr("width", 100)
-			.attr("height", 100);
-	}
+const Basic = ({ draw }) => {
+	const [refresh, setRefresh] = useState(false);
+
+	const handleToggle = () => {
+		setRefresh((p) => !p);
+	};
+
+	// async function drawBasic(svgRef) {
+	// 	const height = svgRef.current.height.baseVal.value;
+	// 	const width = svgRef.current.width.baseVal.value;
+
+	// 	const svg = d3.select(svgRef.current);
+	// 	svg.selectAll("*").remove();
+
+	// 	console.log(svgRef.current.width.baseVal.value);
+
+	// 	svg.append("text")
+	// 		.attr("text-anchor", "middle")
+	// 		.attr("x", "50%")
+	// 		.attr("y", "50%")
+	// 		.text("lolololololololololol");
+	// }
+
 	return (
 		<div className={classes.svgDrawStatic}>
 			<Paper elevation={3} className={classes.svgBox}>
-				<Svg
+				<SvgStatic
 					className={classes.svg}
 					style={{ opacity: 1 }}
-					draw={drawBasic}
+					draw={draw}
+					refresh={refresh}
 				/>
 			</Paper>
+			<IconButton
+				className={classes.svgRefreshIcon}
+				onClick={handleToggle}
+			>
+				<Refresh />
+			</IconButton>
 		</div>
 	);
 };
