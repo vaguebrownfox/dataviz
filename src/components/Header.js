@@ -25,7 +25,12 @@ const Header = React.memo(function Header() {
 		<AppBar sx={classes.appBar} position="fixed" color="primary">
 			<Toolbar>
 				<Box fontSize="h6.fontSize" flexGrow={1}>
-					{PROJECT_NAME}
+					<Link
+						href="/"
+						style={{ textDecoration: "none", color: "white" }}
+					>
+						{PROJECT_NAME}
+					</Link>
 				</Box>
 				<Link
 					href={PROJECT_LINK}
