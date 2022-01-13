@@ -13,7 +13,7 @@ export function getAllSlideIds() {
 	//   }
 	// ]
 
-	const keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	const keys = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 	const sids = keys.map((s, _) => ({ params: { sid: `${s}` } }));
 
