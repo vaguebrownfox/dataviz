@@ -16,25 +16,36 @@ const InvarComp = () => {
 	};
 
 	async function drawPreface(svgRef) {
+		// Size of SVG panel
 		const height = svgRef.current.height.baseVal.value;
 		const width = svgRef.current.width.baseVal.value;
 
+		// Plot padding
 		const margin = 48;
 		const rVal = [0, 22];
 
+		// Get SVG
 		const svg = d3.select(svgRef.current);
 		svg.selectAll("*").remove(); // clear svg panel
 
+		// Load data (public/data)
 		const data = await d3.tsv("/data/tiar_data.tsv");
 
-		let xtag = "sub_id";
-		let ytag = "tiar";
+		// CSV header labels for plotting
+		let xtag = "fa1";
+		let ytag = "fa2";
 		let rtag = "tiar";
 
+		// X and Y labels
+		let xLabel = "F1 (Hz)";
+		let yLabel = "F2 (Hz)";
+
+		// Min and Max values of components
 		const xMinMax = d3.extent(data, (d) => parseFloat(d[xtag]));
 		const yMinMax = d3.extent(data, (d) => parseFloat(d[ytag]));
 		const rMinMax = d3.extent(data, (d) => parseFloat(d[rtag]));
 
+		// Scales for components
 		const xScale = d3
 			.scaleLinear()
 			.domain(xMinMax)
@@ -46,6 +57,7 @@ const InvarComp = () => {
 		const rScale = d3.scaleLinear().domain(rMinMax).range(rVal);
 		const cScale = d3.interpolateMagma;
 
+		// Draw circles
 		const circles = svg
 			.selectAll(classes.dot)
 			.data(data)
@@ -63,6 +75,7 @@ const InvarComp = () => {
 			.attr("stroke-width", 0)
 			.style("opacity", (d) => d[rtag] / rMinMax[1]);
 
+		// Add Axis Groups
 		const xAxis = d3.axisBottom(xScale).tickValues(xMinMax);
 		const xAxisG = svg
 			.append("g")
@@ -73,15 +86,33 @@ const InvarComp = () => {
 			.call(xAxis)
 			.attr("transform", `translate(${0}, ${height - margin})`);
 
+		// X label
+		xAxisG
+			.append("text")
+			.text(`${xtag} | ${xLabel}`)
+			.attr("text-anchor", "middle")
+			.attr("fill", "#000")
+			.attr("x", width / 2)
+			.attr("y", margin / 2);
+
 		const yAxis = d3.axisLeft(yScale).tickValues(yMinMax);
 		const yAxisG = svg
 			.append("g")
 			.attr("class", classes.axis)
 			.attr("id", classes.yAxis)
 			.attr("opacity", 0);
-
 		yAxisG.call(yAxis).attr("transform", `translate(${margin}, ${0})`);
+		// Y label
+		yAxisG
+			.append("text")
+			.text(`${ytag} | ${yLabel}`)
+			.attr("text-anchor", "middle")
+			.attr("fill", "#000")
+			.attr("x", -margin / 2)
+			.attr("y", height / 2)
+			.attr("transform", `rotate(-90,${-margin / 2}, ${height / 2} )`);
 
+		// Animation
 		circles
 			.transition()
 			.delay((_, i) => i * 10)
@@ -96,7 +127,7 @@ const InvarComp = () => {
 	return (
 		<div className={classes.root}>
 			<Typography variant="h3" textAlign="center">
-				Invariant and Component
+				D3 scatterplot
 			</Typography>
 			<PanVizLayout
 				{...{
