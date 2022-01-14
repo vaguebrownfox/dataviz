@@ -7,6 +7,7 @@ import Motivation from "./aslides/Motivation";
 import Intro from "./aslides/Intro";
 import Preface from "./aslides/Preface";
 import InvarComp from "./aslides/InvarComp";
+import Priorities from "./aslides/Priorities";
 
 const Slide = ({ id }) => {
 	return (
@@ -45,8 +46,8 @@ export const p = (id) => {
 		case "3":
 			return {
 				progs,
-				title: "Preface",
-				component: <Preface />,
+				title: "Priorities",
+				component: <Priorities />,
 			};
 		case "4":
 			return {

@@ -15,14 +15,14 @@ const Preface = () => {
 		setSlideCount((p) => (p - 1 < 0 ? 0 : p - 1));
 	};
 
-	async function drawPreface(svgRef) {
+	async function draw(svgRef) {
 		const svg = d3.select(svgRef.current);
 		svg.selectAll("*").remove();
 
 		svg.append("text")
 			.attr("text-anchor", "middle")
 			.attr("x", "50%")
-			.attr("y", "50%")
+			.attr("y", "30%")
 			.text("preface" + this.slideCount);
 	}
 
@@ -33,7 +33,7 @@ const Preface = () => {
 			</Typography>
 			<PanVizLayout
 				{...{
-					draw: drawPreface.bind({ slideCount }),
+					draw: draw.bind({ slideCount }),
 					slideCount,
 					handleSlideNext,
 					handleSlidePrev,

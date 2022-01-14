@@ -15,7 +15,7 @@ const InvarComp = () => {
 		setSlideCount((p) => (p - 1 < 0 ? 0 : p - 1));
 	};
 
-	async function drawPreface(svgRef) {
+	async function draw(svgRef) {
 		// Size of SVG panel
 		const height = svgRef.current.height.baseVal.value;
 		const width = svgRef.current.width.baseVal.value;
@@ -75,6 +75,8 @@ const InvarComp = () => {
 			.attr("stroke-width", 0)
 			.style("opacity", (d) => d[rtag] / rMinMax[1]);
 
+		// Interactivity
+
 		// Add Axis Groups
 		const xAxis = d3.axisBottom(xScale).tickValues(xMinMax);
 		const xAxisG = svg
@@ -131,7 +133,7 @@ const InvarComp = () => {
 			</Typography>
 			<PanVizLayout
 				{...{
-					draw: drawPreface.bind({ slideCount }),
+					draw: draw.bind({ slideCount }),
 					slideCount,
 					handleSlideNext,
 					handleSlidePrev,
