@@ -10,6 +10,10 @@
 
 .axis line,
 .axis path {
-	stroke: #bbb;
+	stroke: #aaa;
 	stroke-width: 1px;
+}
+
+.axis text {
+	fill: #aaa;
 }
