@@ -29,7 +29,7 @@ const Preface = () => {
 	return (
 		<div className={classes.root}>
 			<Typography variant="h3" textAlign="center">
-				Preface
+				Priorities
 			</Typography>
 			<PanVizLayout
 				{...{
