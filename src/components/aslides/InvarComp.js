@@ -76,6 +76,7 @@ const InvarComp = () => {
 			.style("opacity", (d) => d[rtag] / rMinMax[1]);
 
 		// Interactivity
+		// TODO
 
 		// Add Axis Groups
 		const xAxis = d3.axisBottom(xScale).tickValues(xMinMax);
