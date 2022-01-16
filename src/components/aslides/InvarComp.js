@@ -32,8 +32,8 @@ const InvarComp = () => {
 		const data = await d3.tsv("/data/tiar_data.tsv");
 
 		// CSV header labels for plotting
-		let xtag = "fe1";
-		let ytag = "fe2";
+		let xtag = "fu1";
+		let ytag = "fu2";
 		let rtag = "tiar";
 
 		// X and Y labels
