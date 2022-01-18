@@ -8,6 +8,7 @@ import Intro from "./aslides/Intro";
 import Preface from "./aslides/Preface";
 import InvarComp from "./aslides/InvarComp";
 import Priorities from "./aslides/Priorities";
+import DrawScatter from "./aslides/DrawScatter";
 
 const Slide = ({ id }) => {
 	return (
@@ -58,8 +59,8 @@ export const p = (id) => {
 		case "5":
 			return {
 				progs,
-				title: "Analysis of the Information",
-				component: <Preface />,
+				title: "Draw with D3",
+				component: <DrawScatter />,
 			};
 
 		case "6":
