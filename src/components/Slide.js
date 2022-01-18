@@ -9,6 +9,8 @@ import Preface from "./aslides/Preface";
 import InvarComp from "./aslides/InvarComp";
 import Priorities from "./aslides/Priorities";
 import DrawScatter from "./aslides/DrawScatter";
+import AutoPlot from "./aslides/AutoPlot";
+import AutoPlot2 from "./aslides/AutoPlot2";
 
 const Slide = ({ id }) => {
 	return (
@@ -72,14 +74,14 @@ export const p = (id) => {
 		case "7":
 			return {
 				progs,
-				title: "Number of Components",
-				component: <Preface />,
+				title: "Plot",
+				component: <AutoPlot />,
 			};
 		case "8":
 			return {
 				progs,
 				title: "Length of Components",
-				component: <Preface />,
+				component: <AutoPlot2 />,
 			};
 		case "9":
 			return {
