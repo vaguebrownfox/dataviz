@@ -9,7 +9,7 @@
 }
 
 .svgDrawStatic {
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -22,7 +22,7 @@
 }
 
 .svgBox {
-	height: 80vh;
+	height: 70vh;
 	width: 90%;
 	min-height: 256px;
 	padding: 8px;

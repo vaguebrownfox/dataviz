@@ -17,3 +17,9 @@
 .axis text {
 	fill: #aaa;
 }
+
+.radiobuttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
